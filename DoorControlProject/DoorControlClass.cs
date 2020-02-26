@@ -4,22 +4,25 @@ namespace DoorControlProject
     {
         private IDoor _door;
         private IUserValidation _userValidation;
+        private IEntryNotification _entryNotification;
 
-        public DoorControlClass(IDoor door, IUserValidation userValidation)
+        public DoorControlClass(IDoor door, IUserValidation userValidation, IEntryNotification entryNotification)
         {
             _door = door;
             _userValidation = userValidation;
+            _entryNotification = entryNotification;
         }
 
         public void RequestEntry(int id)
         {
-            if (_userValidation.ValidateEntryRequest(id) == true)
+            if (_userValidation.ValidateEntryRequest(id))
             {
                 _door.Open();
+                _entryNotification.NotifyEntryGranted();
             }
         }
 
-        private void DoorOpen()
+        public void DoorOpen()
         {
             _door.Close();
         }

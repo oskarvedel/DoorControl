@@ -20,20 +20,25 @@ namespace DoorControl.Test.Unit
         [SetUp]
         public void Setup()
         {
-            _uut = new DoorControlClass(_door,_userValidation);
             _door = Substitute.For<IDoor>();
             _userValidation = Substitute.For<IUserValidation>();
             _entryNotification = Substitute.For<IEntryNotification>();
-
+            _uut = new DoorControlClass(_door,_userValidation,_entryNotification);
         }
 
         [Test]
-        public void RequestEntrySuccessOpensDoor()
+        public void RequestEntryCallsDoorOpen()
         {
+            //arrange
             _userValidation.ValidateEntryRequest(1111).Returns(true);
 
+            //act
             _uut.RequestEntry(1111);
+
+            //assert
             _door.Received(1).Open();
+            _entryNotification.Received(1).NotifyEntryGranted();
+            _uut.Received(1).DoorOpen();
         }
     }
 }
