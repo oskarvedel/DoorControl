@@ -15,13 +15,16 @@ namespace DoorControl.Test.Unit
         private DoorControlClass _uut;
         private IDoor _door;
         private IUserValidation _userValidation;
+        private IEntryNotification _entryNotification;
 
         [SetUp]
         public void Setup()
         {
+            _uut = new DoorControlClass(_door,_userValidation);
             _door = Substitute.For<IDoor>();
             _userValidation = Substitute.For<IUserValidation>();
-            _uut = new DoorControlClass(_door,_userValidation);
+            _entryNotification = Substitute.For<IEntryNotification>();
+
         }
 
         [Test]
