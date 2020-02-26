@@ -27,7 +27,7 @@ namespace DoorControl.Test.Unit
         }
 
         [Test]
-        public void RequestEntryCallsDoorOpen()
+        public void ClosedDoorOpens()
         {
             //arrange
             _userValidation.ValidateEntryRequest(1111).Returns(true);
@@ -36,9 +36,23 @@ namespace DoorControl.Test.Unit
             _uut.RequestEntry(1111);
 
             //assert
-            _door.Received(1).Open();
-            _entryNotification.Received(1).NotifyEntryGranted();
-            _uut.Received(1).DoorOpen();
+            _door.Received().Open();
+            _entryNotification.Received().NotifyEntryGranted();
+
         }
+        [Test]
+        public void OpenDoorCloses()
+        {
+            //arrange
+            _userValidation.ValidateEntryRequest(1111).Returns(true);
+
+            //act
+            _uut.RequestEntry(1111);
+            _uut.DoorOpen();
+
+            //assert
+            _door.Received(1).Close();
+        }
+        
     }
 }
