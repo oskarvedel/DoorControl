@@ -29,7 +29,7 @@ namespace DoorControl.Test.Unit
         [Test]
         public void ClosedDoorOpens()
         {
-            //arrange
+            //arrange LOL
             _userValidation.ValidateEntryRequest(1111).Returns(true);
 
             //act
