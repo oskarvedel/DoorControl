@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoorControlProject", "DoorControlProject\DoorControlProject.csproj", "{5563F48F-BA2F-4763-A1DC-02A6EFCFCB96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoorControl.Test.Unit", "DoorControl.Test.Unit\DoorControl.Test.Unit.csproj", "{5B9AA8BB-0DC4-4815-9AD8-4BC160ED8861}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5563F48F-BA2F-4763-A1DC-02A6EFCFCB96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5563F48F-BA2F-4763-A1DC-02A6EFCFCB96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5563F48F-BA2F-4763-A1DC-02A6EFCFCB96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5563F48F-BA2F-4763-A1DC-02A6EFCFCB96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B9AA8BB-0DC4-4815-9AD8-4BC160ED8861}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B9AA8BB-0DC4-4815-9AD8-4BC160ED8861}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B9AA8BB-0DC4-4815-9AD8-4BC160ED8861}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B9AA8BB-0DC4-4815-9AD8-4BC160ED8861}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
